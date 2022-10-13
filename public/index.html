@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Peer Chat</title>
+    <meta charset="UTF-8">
+    <meta name="description" content="Pure PeerJS sample">
+    <meta name="keywords" content="PeerJS, P2P, JavaScript">
+    <meta name="author" content="Bahman Timas">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="favicon.ico"/>
+    <link rel="stylesheet" href="styles.css">
+    <script src="https://unpkg.com/peerjs@1.4.7/dist/peerjs.min.js"></script>
+    <script src="script.js" type="text/javascript"></script>
+</head>
+<body>
+<div class="grid-container">
+    <div id="connection-container" class="grid-item">
+        <h2>
+            PeerJs:
+        </h2>
+        <label for="local-id-input">ID:</label><input id="local-id-input" placeholder="generated"/>
+        <button onclick="init()">Init</button>
+        <p id="local-id">Init PeerJs to connect peer server...</p>
+        <button onclick="copy()">Copy ID</button>
+        <button onclick="disconnect()">Disconnect</button>
+        <button onclick="reconnect()">Reconnect</button>
+        <button onclick="destroy()">Destroy</button>
+        <h2>
+            Connect:
+        </h2>
+        <label for="dest-id-input">ID:</label><input id="dest-id-input" placeholder="remote-id(required)"/>
+        <button onclick="connect()">Connect</button>
+        <button onclick="close()">Close Connection</button>
+
+        <button onclick="call()">Call</button>
+        <br>
+        <h2>
+            Online Users:
+        </h2>
+        <button onclick="refresh()">Refresh</button>
+        <div id="client-list">empty</div>
+    </div>
+
+    <div id="chat-container" style="display: none;" class="grid-item">
+        <h2>
+            Chat:
+        </h2>
+        <button onclick="clearChats()">Clear</button>
+        <p id="remote-chat-id">not connected</p>
+        <div id="chats"></div>
+        <label for="data">data:</label><input id="data"/>
+        <button onclick="send()">Send</button>
+    </div>
+
+    <div id="call-container" style="display: none;" class="grid-item">
+        <h2>
+            Call:
+        </h2>
+        <button onclick="answer()">Answer</button>
+        <p id="remote-call-id">not connected</p>
+        <h3>
+            Local:
+        </h3>
+        <video id="local-video" autoplay muted></video>
+        <h3>
+            Remote:
+        </h3>
+        <video id="remote-video" autoplay></video>
+    </div>
+
+    <div id="log-container" class="grid-item">
+        <h2>
+            Logs:
+        </h2>
+        <button onclick="clearLogs()">Clear</button>
+        <div id="logs"></div>
+    </div>
+
+</div>
+</body>
+</html>
+
+

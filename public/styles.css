@@ -1,0 +1,59 @@
+input {
+    width: 120px;
+}
+
+h2 {
+    display: inline-block;
+}
+
+.grid-container {
+    display: grid;
+    gap: 8px;
+    grid-template-columns: repeat(4, auto);
+}
+
+@media only screen and (max-width: 1300px) {
+    .grid-container {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
+@media only screen and (max-width: 980px) {
+    .grid-container {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media only screen and (max-width: 660px) {
+    .grid-container {
+        grid-template-columns: repeat(1, 1fr);
+    }
+}
+
+.grid-item {
+    width: 320px;
+}
+
+#logs {
+    height: 320px;
+    width: 240px;
+    overflow: scroll;
+}
+
+#chats {
+    height: 320px;
+    width: 240px;
+    overflow: scroll;
+}
+
+#local-video {
+    height: 180px;
+    width: 320px;
+    background-color: black;
+}
+
+#remote-video {
+    height: 180px;
+    width: 320px;
+    background-color: black;
+}
